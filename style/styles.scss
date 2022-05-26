@@ -6,9 +6,10 @@ $neutral2: #f6fff8;
 
 @mixin card() {
   margin: 5vw;
-  padding: 5vw;
+  padding: 10px 5vw 10px 5vw;
   border-radius: 20px;
-  background-color: $neutral1;
+  background-color: $neutral2;
+  // box-shadow: 0px 0px 5px 2px white;
 }
 
 * {
@@ -17,44 +18,200 @@ $neutral2: #f6fff8;
 }
 
 hmtl, body {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 body {
   box-sizing: border-box;
-  background-color: $neutral2;
-  font-family: Helvetica, sans-serif;
+  background-color: $primary2;
+  font-family: 'Karla', sans-serif;
   font-size: 16px;
+  position: relative;
 }
 
 header {
-  background-color: $primary2;
+  position: fixed;
+  width: 100vw;
+  height: 4em;
+  background-color: $primary1;
+  top: 0px;
   h1 {
     text-align: center;
+    padding: .5em;
   }
+}
+
+main {
+  margin-top: 6.25em;
+}
+
+h2 {
+  text-align: center;
 }
 
 p {
   margin-top: 1vw;
 }
-ul {
+.card ul {
   margin-left: 5vw;
   list-style: square;
 }
 footer {
   text-align: center;
   background-color: $primary2;
+  margin-bottom: 3em;
+  a {
+    text-decoration: none;
+  }
 }
 
 .card {
   @include card;
 }
 
+.card-pics {
+  #cont-pics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    img {
+      width: 100%;
+      margin: 3vw;
+    }
+  }
+}
+
+// NAV MENU
+
+nav {
+  position: fixed;
+  width: 20vw;
+  background-color: none;
+  top: 3px;
+  .menu-mob {
+    img {
+      padding: .5em;
+      width: 3em;
+    }
+  }
+
+  #hidden-menu {
+    background: rgb(0,0,0,0);
+    width: min-content;
+    padding-right: 20px;
+    margin-left: 0.3em;
+  }
+
+  img {
+    margin-left: 10px;
+    filter: invert(0%);
+    transition: .2s;
+  }
+
+  li {
+    list-style: none;
+    text-align: center;
+    padding: 0.2em;
+    margin: 0.2em;
+    margin-left: .1em;
+    background-color: $primary1;
+    opacity: 0.9;
+    border: 2px black solid;
+    border-radius: 25px;
+    box-shadow: 5px 0px;
+    font-size: 2em;
+    a, a:visited {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+#show-menu, #hidden-menu {
+  display: none;
+}
+
+#show-menu:checked ~ #hidden-menu {
+  display: block;
+}
+
+.menu-mob img:hover {
+  filter: invert(100%)
+}
+
+#menu-desk {
+  display: none;
+}
 
 
 
 
 
+
+
+
+//DESKTOP//
+@media only screen and (min-width: 768px) {
+  body {
+    
+  }
+  header {
+    position: fixed;
+    height: 5em;
+    h1 {
+      font-size: 3em;
+      padding: 0px;
+    }
+  }
+  #menu-desk {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    background-color: $primary1;
+    margin-top: -0.3em;
+    padding-bottom: .5em;
+    li {
+      display: inline-block;
+      font-size: 1.2em;
+      a {
+        text-decoration: none;
+        color: $primary2;
+        transition: 0.2s;
+      }
+      a:hover {
+        color: $primary3;
+      }
+    }
+  }
+  main {   
+    margin-top: 7em;
+  }
+  .card {
+    @include card;
+    height: min-content; //THIS SAVED ME.
+  }
+  .card-pics {
+    #cont-pics {
+      // border: solid 5px black;
+      img {
+        width: 42%;
+        margin: 3vw;
+      }
+    }
+  }
+  
+  .menu-mob {
+    display: none;
+  }
+  #hidden-menu {
+    display: none;
+    position: relative;
+  }
+
+
+  
+}
 
 
 

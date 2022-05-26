@@ -4,20 +4,34 @@
 }
 
 hmtl, body {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 body {
   box-sizing: border-box;
-  background-color: #f6fff8;
-  font-family: Helvetica, sans-serif;
+  background-color: #a4c3b2;
+  font-family: "Karla", sans-serif;
   font-size: 16px;
+  position: relative;
 }
 
 header {
-  background-color: #a4c3b2;
+  position: fixed;
+  width: 100vw;
+  height: 4em;
+  background-color: #6b9080;
+  top: 0px;
 }
 header h1 {
+  text-align: center;
+  padding: 0.5em;
+}
+
+main {
+  margin-top: 6.25em;
+}
+
+h2 {
   text-align: center;
 }
 
@@ -25,7 +39,7 @@ p {
   margin-top: 1vw;
 }
 
-ul {
+.card ul {
   margin-left: 5vw;
   list-style: square;
 }
@@ -33,15 +47,142 @@ ul {
 footer {
   text-align: center;
   background-color: #a4c3b2;
+  margin-bottom: 3em;
+}
+footer a {
+  text-decoration: none;
 }
 
 .card {
   margin: 5vw;
-  padding: 5vw;
+  padding: 10px 5vw 10px 5vw;
   border-radius: 20px;
-  background-color: #eaf4f4;
+  background-color: #f6fff8;
 }
 
+.card-pics #cont-pics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card-pics #cont-pics img {
+  width: 100%;
+  margin: 3vw;
+}
+
+nav {
+  position: fixed;
+  width: 20vw;
+  background-color: none;
+  top: 3px;
+}
+nav .menu-mob img {
+  padding: 0.5em;
+  width: 3em;
+}
+nav #hidden-menu {
+  background: rgba(0, 0, 0, 0);
+  width: min-content;
+  padding-right: 20px;
+  margin-left: 0.3em;
+}
+nav img {
+  margin-left: 10px;
+  filter: invert(0%);
+  transition: 0.2s;
+}
+nav li {
+  list-style: none;
+  text-align: center;
+  padding: 0.2em;
+  margin: 0.2em;
+  margin-left: 0.1em;
+  background-color: #6b9080;
+  opacity: 0.9;
+  border: 2px black solid;
+  border-radius: 25px;
+  box-shadow: 5px 0px;
+  font-size: 2em;
+}
+nav li a, nav li a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+#show-menu, #hidden-menu {
+  display: none;
+}
+
+#show-menu:checked ~ #hidden-menu {
+  display: block;
+}
+
+.menu-mob img:hover {
+  filter: invert(100%);
+}
+
+#menu-desk {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    position: fixed;
+    height: 5em;
+  }
+  header h1 {
+    font-size: 3em;
+    padding: 0px;
+  }
+
+  #menu-desk {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    background-color: #6b9080;
+    margin-top: -0.3em;
+    padding-bottom: 0.5em;
+  }
+  #menu-desk li {
+    display: inline-block;
+    font-size: 1.2em;
+  }
+  #menu-desk li a {
+    text-decoration: none;
+    color: #a4c3b2;
+    transition: 0.2s;
+  }
+  #menu-desk li a:hover {
+    color: #cce3de;
+  }
+
+  main {
+    margin-top: 7em;
+  }
+
+  .card {
+    margin: 5vw;
+    padding: 10px 5vw 10px 5vw;
+    border-radius: 20px;
+    background-color: #f6fff8;
+    height: min-content;
+  }
+
+  .card-pics #cont-pics img {
+    width: 42%;
+    margin: 3vw;
+  }
+
+  .menu-mob {
+    display: none;
+  }
+
+  #hidden-menu {
+    display: none;
+    position: relative;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
 
 /*# sourceMappingURL=styles.css.map */

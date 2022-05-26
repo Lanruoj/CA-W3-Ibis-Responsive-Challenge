@@ -5,13 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
     <title>Ibises!</title>
 </head>
 <body>
     <header>
-        
         <h1>Ibis Facts</h1>
+        <div id="menu-desk">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Links</a></li>
+            </ul>
+        </div>
     </header>
+        <nav>
+            <span class="menu-mob">
+                <input type=checkbox id="show-menu">
+                <label for="show-menu"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/2048px-Hamburger_icon.svg.png"></label>
+                <span id="hidden-menu">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Links</a></li>
+                    </ul>
+                </span>
+            </span>
+        </nav>
     <main>
         <section class="card" id="fun_facts">
             <h2>Fun facts about ibises</h2>
@@ -52,7 +76,6 @@
         </section>
         <section class="card card-pics" id="ibis_pics">
             <h2>Amazing ibis pics</h2>
-            <p>Behold!</p>
             <div id="cont-pics">
                     <img id="img1" alt="A beautiful ibis." src="./img/beautiful_ibis.jpg"/>
                     <img id="img2" alt="A clever ibis" src="./img/clever_ibis.jpg"/>
