@@ -6,7 +6,7 @@ $neutral2: #f6fff8;
 
 @mixin card() {
   margin: 5vw;
-  padding: 10px 5vw 10px 5vw;
+  padding: 1vw 5vw 1vw 5vw;
   border-radius: 20px;
   background-color: $neutral2;
   // box-shadow: 0px 0px 5px 2px white;
@@ -190,13 +190,19 @@ nav {
   .card {
     @include card;
     height: min-content; //THIS SAVED ME.
+    
+
   }
   .card-pics {
+    padding: 1vw 3vw 1vw 3vw;
     #cont-pics {
+      display: flex;
+      justify-content: space-between;
+      align-items: space-evenly;
       // border: solid 5px black;
       img {
-        width: 42%;
-        margin: 3vw;
+        width: 49%;
+        margin: 2vw 0 2vw 0;
       }
     }
   }
